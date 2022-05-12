@@ -1,10 +1,13 @@
+import 'package:finalyearproject/controllers/firebase_form.dart';
 import 'package:finalyearproject/pages/login_page.dart';
 import 'package:finalyearproject/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  FirebaseForm firebaseForm = Get.find();
 
   @override
   Widget build(BuildContext context) {

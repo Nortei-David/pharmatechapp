@@ -1,3 +1,4 @@
+import 'package:finalyearproject/controllers/firebase_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'login_page.dart';
@@ -10,36 +11,41 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
+  FirebaseForm formController = Get.find();
+  String? _email, _password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFFB0BEC5),
-              Color(0xFF90A4AE),
-              Color(0xFF78909C),
-              Color(0xFF607D8B),
-            ],
+      body: Form(
+        key: _key,
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFFB0BEC5),
+                Color(0xFF90A4AE),
+                Color(0xFF78909C),
+                Color(0xFF607D8B),
+              ],
+            ),
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SingleChildScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30,
                 ),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Sign Up',
                       style: TextStyle(
                         color: Colors.white,
@@ -75,6 +81,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           height: 60,
                           child: TextFormField(
+                            onSaved: (newValue) {
+                              _email = newValue;
+                            },
                             keyboardType: TextInputType.emailAddress,
                             style: TextStyle(
                               color: Colors.black87,
@@ -123,6 +132,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           height: 60,
                           child: TextFormField(
+                            onSaved: ((newValue) {
+                              _password = newValue;
+                            }),
                             obscureText: true,
                             style: TextStyle(
                               color: Colors.black87,
@@ -156,7 +168,10 @@ class _SignUpPageState extends State<SignUpPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          _key.currentState!.save();
+                          formController.signup(_email, _password);
+                        },
                         child: const Text(
                           'sign up',
                           style: TextStyle(
@@ -197,8 +212,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
