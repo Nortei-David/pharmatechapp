@@ -1,3 +1,4 @@
+import 'package:finalyearproject/pages/dashboard.dart';
 import 'package:finalyearproject/pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ void main() async {
   await binding.initBindings();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: "new",
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }
