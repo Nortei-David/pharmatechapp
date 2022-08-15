@@ -1,34 +1,49 @@
 {
   "project_info": {
-    "project_number": "642245616870",
-    "project_id": "finalyearproject-6c8a0",
-    "storage_bucket": "finalyearproject-6c8a0.appspot.com"
+    "project_number": "398821848013",
+    "project_id": "pharmatech-d7beb",
+    "storage_bucket": "pharmatech-d7beb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:642245616870:android:73fd058626aaae24ce0727",
+        "mobilesdk_app_id": "1:398821848013:android:a9fe8211f5dcbf997c4a84",
         "android_client_info": {
           "package_name": "com.example.finalyearproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "642245616870-agbr4n93t2lse45skflvrdqdf8bvu3rl.apps.googleusercontent.com",
+          "client_id": "398821848013-3pbtmajedpvlgtvn8ra87ok5lis1tiij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finalyearproject",
+            "certificate_hash": "a84edaed48184da20bea8687f256bd9c7ea58260"
+          }
+        },
+        {
+          "client_id": "398821848013-4ii5poscr45len0kvrn3bih4m0uepdui.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCW8anyGcqSHGl4R-f9JL5n8gKHyFhSa5c"
+          "current_key": "AIzaSyCfALXSa8w9Jei0rvTp0cSCyXm_OV4MXAU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "642245616870-agbr4n93t2lse45skflvrdqdf8bvu3rl.apps.googleusercontent.com",
+              "client_id": "398821848013-4ii5poscr45len0kvrn3bih4m0uepdui.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "398821848013-0dcts75uaumg136d6ts4tfbioh9p5gpv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.finalyearproject"
+              }
             }
           ]
         }
